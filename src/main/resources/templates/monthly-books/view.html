@@ -23,6 +23,7 @@ Modified by N.See 2021
                 <span th:text="${book.getTitle()}"></span>
                 <br />
                 <small class="text-muted"><em th:text="${book.getDescription()}"></em></small>
+                <br />
                 <span class="card-text"><strong>Authors:</strong></span>
                 <ul class="list-group list-group-flush" th:each="author : ${book.getAuthors()}">
                     <li class="list-group-item" th:text="${author}"></li>
