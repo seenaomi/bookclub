@@ -1,4 +1,8 @@
 <!doctype html>
+<!--
+Lomax, R. (2021). CIS 530 Server-Side Development. Bellevue University.
+Modified by N.See 2021
+-->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
@@ -13,7 +17,7 @@
 <body>
   <div th:insert="~{fragments/header :: header}"></div>
   <main>
-      <section class="py-5 text-center container">
+      <section class="pt-5 text-center container">
           <div class="row py-lg-5">
               <div class="col-lg-6 col-md-8 mx-auto">
                   <h1 class="fw-light">Book Club</h1>
@@ -22,6 +26,18 @@
                       shop" for all of your book club needs. Below you will find a list of
                       this month's top 10 favorite books. Select the book to see its details.
                   </p>
+              </div>
+          </div>
+      </section>
+      <section class="pt-5 container">
+          <div class="col" th:each="book : ${books}">
+              <p class="card-text">
+                  <span th:text="${book.getTitle()}"></span>
+                  <br />
+                  <small class="text-muted"><em th:text="${book.getDescription()}"></em></small>
+              </p>
+              <div class="pb-5 btn-group">
+                  <a href="#" th:href="@{/{id}(id=${book.getIsbn()})}" class="btn btn-sm btn-outline-secondary">View</a>
               </div>
           </div>
       </section>
