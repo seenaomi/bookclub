@@ -8,6 +8,7 @@ Modified by N.See 2021
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
 
 public class WishlistItem {
 
@@ -19,12 +20,16 @@ public class WishlistItem {
     @NotEmpty(message = "Title is a required field")
     private String title;
 
+    @Id
+    private String id;
+
     public WishlistItem() {
     }
 
-    public WishlistItem(String isbn, String title) {
+    public WishlistItem(String isbn, String title, String id) {
         this.isbn = isbn;
         this.title = title;
+        this.id = id;
     }
 
     public String getIsbn() {
@@ -43,7 +48,15 @@ public class WishlistItem {
         this.title = title;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String toString(){
-        return String.format("WishlistItem{isbn=%s, title=%s}", getIsbn(), getTitle());
+        return String.format("WishlistItem{isbn=%s, title=%s, id=%s}", getIsbn(), getTitle(), getId());
     }
 }
