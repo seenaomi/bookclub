@@ -25,11 +25,7 @@ public class WishlistController {
     WishlistDao wishlistDao = new MongoWishlistDao();
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showWishlist(Model model) {
-        List<WishlistItem> wishlist = wishlistDao.list();
-
-        model.addAttribute("wishlist", wishlist);
-
+    public String showWishlist() {
         return "wishlist/list";
     }
 
