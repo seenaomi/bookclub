@@ -53,6 +53,19 @@
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
 
+        <!-- OpenAPI Swagger Documentation -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
+        <!-- Json path library -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+        </dependency>
+
         <!-- Spring devtools -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -65,13 +78,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <!-- OpenAPI Swagger Documentation -->
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.5.2</version>
         </dependency>
     </dependencies>
 

@@ -18,26 +18,33 @@ Modified by N.See 2021
 <div th:insert="~{fragments/header :: header}"></div>
 <main>
     <section class="py-5 container">
-        <div class="card">
-            <div class="card-body">
-                <span th:text="${book.getTitle()}"></span>
-                <br />
-                <small class="text-muted"><em th:text="${book.getDescription()}"></em></small>
-                <br />
-                <span class="card-text"><strong>Authors:</strong></span>
-                <ul class="list-group list-group-flush" th:each="author : ${book.getAuthors()}">
-                    <li class="list-group-item" th:text="${author}"></li>
-                </ul>
-                <span class="card-text"><strong>Pages: </strong><em th:text="${book.getNumOfPages()}"></em></span>
-                <br/>
-                <span class="card-text"><strong>ISBN: </strong><em th:text="${book.getIsbn()}"></em></span>
-                <br/>
-                <br/>
-                <div class="btn-group">
-                    <a href="/" th:href="@{/}" class="btn btn-sm btn-outline-secondary">Return to books</a>
-                </div>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Book of the month details</h1>
             </div>
-        </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title" th:text="${book.getTitle()}"></h4>
+
+                        <div class="card-subtitle text-muted">
+                            Pages: <span th:text="${book.getNumOfPages()}"></span>
+                        </div>
+                        <br />
+                        <div class="card-text">
+                            <p>
+                                <strong>Description:</strong> <br /><span th:text="${book.getDescription()}"></span>
+                            </p>
+                            <strong>Web Link:</strong>
+                            <p>
+                                <a href="#" target="_blank" th:href="${book.getInfoUrl()}" th:text="${book.getInfoUrl()}"></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <a href="/" th:href="@{/}">Return to books</a>
+            </div>
     </section>
 </main>
 
