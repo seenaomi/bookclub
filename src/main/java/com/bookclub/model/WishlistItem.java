@@ -23,13 +23,16 @@ public class WishlistItem {
     @Id
     private String id;
 
+    private String username;
+
     public WishlistItem() {
     }
 
-    public WishlistItem(String isbn, String title, String id) {
+    public WishlistItem(String isbn, String title, String id, String username) {
         this.isbn = isbn;
         this.title = title;
         this.id = id;
+        this.username = username;
     }
 
     public String getIsbn() {
@@ -56,7 +59,15 @@ public class WishlistItem {
         this.id = id;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String toString(){
-        return String.format("WishlistItem{isbn=%s, title=%s, id=%s}", getIsbn(), getTitle(), getId());
+        return String.format("WishlistItem{isbn=%s, title=%s, id=%s, username=%s}", getIsbn(), getTitle(), getId(), getUsername());
     }
 }
