@@ -5,7 +5,6 @@ Lomax, R. (2021). CIS 530 Server-Side Development. Bellevue University.
 Modified by N.See 2021
 */
 
-import java.util.List;
 
 public class Book {
 
@@ -68,7 +67,8 @@ public class Book {
         this.numOfPages = numOfPages;
     }
 
-    public String toString(){
-        return String.format("Book{isbn=<isbn>, title=<title>, description=<description>, infoUrl=<infoUrl>, numOfPages=<numOfPages>}", getIsbn(), getTitle(), getDescription(), getInfoUrl(), getNumOfPages());
+    @Override
+    public String toString() {
+        return String.format("Book{isbn=%s, title=%s, description=%s, infoUrl=%s, numOfPages=%s}", isbn, title, description, infoUrl, numOfPages);
     }
 }

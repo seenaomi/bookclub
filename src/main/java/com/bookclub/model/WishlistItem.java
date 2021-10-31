@@ -25,13 +25,16 @@ public class WishlistItem {
 
     private String username;
 
-    public WishlistItem() {
-    }
+    public WishlistItem() {}
 
-    public WishlistItem(String isbn, String title, String id, String username) {
+    public WishlistItem(String isbn, String title) {
         this.isbn = isbn;
         this.title = title;
-        this.id = id;
+    }
+
+    public WishlistItem(String isbn, String title, String username) {
+        this.isbn = isbn;
+        this.title = title;
         this.username = username;
     }
 
@@ -67,7 +70,8 @@ public class WishlistItem {
         this.username = username;
     }
 
-    public String toString(){
-        return String.format("WishlistItem{isbn=%s, title=%s, id=%s, username=%s}", getIsbn(), getTitle(), getId(), getUsername());
+    @Override
+    public String toString() {
+        return String.format("WishlistItem{id=%s, isbn=%s, title=%s, username=%s}", id, isbn, title, username);
     }
 }

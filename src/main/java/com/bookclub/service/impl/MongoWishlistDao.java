@@ -32,7 +32,7 @@ public class MongoWishlistDao implements WishlistDao {
 
         if(wishlistItem != null) {
             wishlistItem.setIsbn(entity.getIsbn());
-            wishlistItem.setId(entity.getTitle());
+            wishlistItem.setTitle(entity.getTitle());
             wishlistItem.setUsername(entity.getUsername());
 
             mongoTemplate.save(wishlistItem);
