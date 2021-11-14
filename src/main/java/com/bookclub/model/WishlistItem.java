@@ -27,12 +27,14 @@ public class WishlistItem {
 
     public WishlistItem() {}
 
-    public WishlistItem(String isbn, String title) {
+    public WishlistItem(String id, String isbn, String title) {
+        this.id = id;
         this.isbn = isbn;
         this.title = title;
     }
 
-    public WishlistItem(String isbn, String title, String username) {
+    public WishlistItem(String id, String isbn, String title, String username) {
+        this.id = id;
         this.isbn = isbn;
         this.title = title;
         this.username = username;
